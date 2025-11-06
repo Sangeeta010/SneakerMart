@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SneakerMart — Sneakers Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner container">
+      <div class="logo">SneakerMart</div>
+
+      <div class="search-area">
+        <input id="searchInput" type="search" placeholder="Search sneakers, brands, models..." />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <div class="top-actions">
+        <button id="nav-login" class="link-btn">Login</button>
+        <button id="nav-signup" class="btn">Sign up</button>
+        <button id="open-cart" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="filters">
+      <div class="filter-block">
+        <h4>Categories</h4>
+        <label><input type="checkbox" class="cat" value="Running" /> Running</label>
+        <label><input type="checkbox" class="cat" value="Casual" /> Casual</label>
+        <label><input type="checkbox" class="cat" value="Training" /> Training</label>
+        <label><input type="checkbox" class="cat" value="Trail" /> Trail</label>
+      </div>
+
+      <div class="filter-block">
+        <h4>Brands</h4>
+        <label><input type="checkbox" class="brand" value="Stride" /> Stride</label>
+        <label><input type="checkbox" class="brand" value="UrbanX" /> UrbanX</label>
+        <label><input type="checkbox" class="brand" value="Velocity" /> Velocity</label>
+        <label><input type="checkbox" class="brand" value="Summit" /> Summit</label>
+        <label><input type="checkbox" class="brand" value="Heritage" /> Heritage</label>
+      </div>
+
+      <div class="filter-block">
+        <h4>Price</h4>
+        <input id="priceMin" type="number" placeholder="Min (₹)" />
+        <input id="priceMax" type="number" placeholder="Max (₹)" />
+        <button id="applyPrice">Apply</button>
+      </div>
+
+      <div class="filter-block">
+        <h4>Sort</h4>
+        <select id="sortSelect">
+          <option value="popular">Popular</option>
+          <option value="low">Price: Low → High</option>
+          <option value="high">Price: High → Low</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </div>
+    </aside>
+
+    <section class="catalog">
+      <div class="catalog-header">
+        <h2>All Sneakers</h2>
+        <div class="small muted" id="resultInfo">Showing all items</div>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </main>
+
+
+  <div id="productModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="closeModal">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-actions">
+        <button class="btn" id="modalAdd">Add to cart</button>
+        <button class="btn ghost" id="modalBuy">Buy now</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cartDrawer" class="drawer hidden">
+    <div class="drawer-head">
+      <h3>Your Cart</h3>
+      <button id="closeCart">Close</button>
+    </div>
+    <div id="cartList" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div>
+        <div class="small">Total</div>
+        <div id="drawerTotal" class="total">₹0</div>
+      </div>
+      <div>
+        <button id="checkoutBtn" class="btn">Checkout</button>
+        <button id="clearCart" class="btn ghost">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  
+<div id="authModal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-btn" id="closeAuth">&times;</button>
+    <h2>Sign Up / Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="signupBtn">Sign Up</button>
+    <button id="loginBtn">Login</button>
+  </div>
+</div>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> SneakerMart — marketplace</div>
+      <div class="small muted">This is a Sneaker website. contact us for more such sneakers.</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
